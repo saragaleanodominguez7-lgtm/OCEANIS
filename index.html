@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCEANIS — Plataforma Avanzada de Exploración Oceanográfica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Fondo de partículas brillantes de profundidad -->
+    <div class="particles-bg"></div>
+
+    <div class="app-wrapper">
+        <!-- Navegación Flotante -->
+        <header class="header">
+            <div class="logo">
+                <svg class="logo-svg glow-animation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 12c5.5 0 5.5-4 11-4s5.5 4 11 4"/>
+                    <path d="M2 18c5.5 0 5.5-4 11-4s5.5 4 11 4"/>
+                </svg>
+                <span class="logo-text">OCEANIS</span>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#hero" class="active">INICIO</a></li>
+                    <li><a href="#capas">EXPLORADOR</a></li>
+                    <li><a href="#especies">ECOSISTEMAS</a></li>
+                    <li><a href="#investigacion">DATOS TÉCNICOS</a></li>
+                    <li><a href="#contacto">REGISTRO</a></li>
+                </ul>
+            </nav>
+
+            <button id="theme-toggle" class="btn-theme" type="button">
+                <svg class="icon-theme" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <span id="theme-text">MODO LUZ</span>
+            </button>
+        </header>
+
+        <!-- Banner Principal (Hero Card) -->
+        <section id="hero" class="hero-card">
+            <div class="hero-grid">
+                <!-- Marco de imagen con mayor nitidez y contraste -->
+                <div class="hero-image-container float-animation">
+                    <div class="sharp-image"></div>
+                    <div class="hero-img-overlay"></div>
+                    <div class="hero-tag">01 / DIVERSIDAD ABISAL</div>
+                    <div class="image-badge-hd">HD ULTRA CLEAR</div>
+                </div>
+
+                <div class="hero-content">
+                    <h1 class="hero-title animated-gradient-text">Exploración Oceanográfica Avanzada</h1>
+                    <p class="hero-description">
+                        Los océanos cubren más del 70% de la superficie terrestre y albergan aproximadamente el 80% de la biodiversidad global. A través de nuestras estaciones de monitoreo autónomas y sumergibles de alta precisión, registramos variables críticas en tiempo real para preservar los santuarios marinos.
+                    </p>
+                    
+                    <div class="hero-badges">
+                        <span class="pill-badge glow-badge">BIOLUMINISCENCIA</span>
+                        <span class="pill-badge glow-badge">FOSAS ABISALES</span>
+                        <span class="pill-badge glow-badge">MONITOREO EN TIEMPO REAL</span>
+                        <span class="pill-badge glow-badge">TELEMETRÍA HD</span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#capas" class="btn-metallic pulse-animation">INICIAR EXPLORACIÓN &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explorador Interactivo de Profundidades -->
+        <section id="capas" class="interactive-section">
+            <div class="section-badge">EXPLORADOR DE CAPAS OCEÁNICAS</div>
+            
+            <div class="depth-selector">
+                <button type="button" class="depth-btn active" data-zone="epipelagica">01. Epipelágica (0-200m)</button>
+                <button type="button" class="depth-btn" data-zone="mesopelagica">02. Mesopelágica (200-1000m)</button>
+                <button type="button" class="depth-btn" data-zone="batipelagica">03. Batipelágica (1000-4000m)</button>
+                <button type="button" class="depth-btn" data-zone="abisal">04. Abisal (4000m+)</button>
+            </div>
+
+            <div class="depth-card">
+                <div class="depth-card-content">
+                    <span id="zone-badge" class="pill-badge">0 – 200 METROS</span>
+                    <h2 id="zone-title" class="animated-gradient-text">Zona Epipelágica (Superficial)</h2>
+                    <p id="zone-desc">Capa iluminada donde ocurre la fotosíntesis. Concentra el fitoplancton, corales, tortugas marinas y la mayor actividad biológica del planeta.</p>
+                </div>
+                
+                <div class="metrics-row">
+                    <div class="metric-box">
+                        <span class="metric-label">PENETRACIÓN DE LUZ</span>
+                        <strong class="metric-val" id="metric-light">100% – 10%</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">RANGO TÉRMICO</span>
+                        <strong class="metric-val" id="metric-temp">20°C a 13°C</strong>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-label">PRESIÓN HIDROSTÁTICA</span>
+                        <strong class="metric-val" id="metric-pressure">1 a 20 atm</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería de Ecosistemas con Tarjetas de Alta Definición -->
+        <section id="especies" class="ecosystems-section">
+            <div class="section-badge">SANTUARIOS & BIOMAS</div>
+            
+            <div class="filter-group">
+                <button type="button" class="filter-pill active" data-filter="all">TODOS</button>
+                <button type="button" class="filter-pill" data-filter="costero">SISTEMAS COSTEROS</button>
+                <button type="button" class="filter-pill" data-filter="profundo">PROFUNDIDADES</button>
+            </div>
+
+            <div class="cards-grid">
+                <article class="card float-card" data-category="costero">
+                    <div class="card-num">01</div>
+                    <div class="card-image img-coral"></div>
+                    <div class="card-body">
+                        <h3>Arrecifes de Coral</h3>
+                        <p>Protegen las costas contra el 97% de la energía del oleaje y sostienen una cuarta parte de todas las especies marinas conocidas.</p>
+                    </div>
+                </article>
+
+                <article class="card float-card" data-category="costero">
+                    <div class="card-num">02</div>
+                    <div class="card-image img-kelp"></div>
+                    <div class="card-body">
+                        <h3>Bosques de Quelpos</h3>
+                        <p>Ecosistemas de altísima productividad que absorben grandes cantidades de CO2 y protegen a docenas de peces en desarrollo.</p>
+                    </div>
+                </article>
+
+                <article class="card float-card" data-category="profundo">
+                    <div class="card-num">03</div>
+                    <div class="card-image img-vent"></div>
+                    <div class="card-body">
+                        <h3>Fuentes Hidrotermales</h3>
+                        <p>Chimeneas volcánicas a miles de metros de profundidad con ecosistemas quimiosintéticos independientes de la radiación solar.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección Informativa Técnica -->
+        <section id="investigacion" class="info-section">
+            <div class="section-badge">INVESTIGACIÓN Y MONITOREO AMBIENTAL</div>
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>Acidificación Oceánica</h3>
+                    <p>La absorción continua de dióxido de carbono reduce el pH del agua de mar, amenazando la fijación de carbonato de calcio en los organismos calcificadores.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Bioluminiscencia Química</h3>
+                    <p>En las profundidades bathypelágicas, más del 76% de las especies producen fotóforos bioluminiscentes para comunicación, defensa y camuflaje.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Sensorización Satelital</h3>
+                    <p>Redes de boyas provistas de espectrómetros que analizan la temperatura de la superficie del mar, la salinidad y la biomasa de clorofila-a en tiempo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario Integrado -->
+        <section id="contacto" class="form-section">
+            <div class="form-card">
+                <h2 class="animated-gradient-text">Únete a la Red OCEANIS</h2>
+                <p>Recibe reportes técnicos, alertas de monitoreo y oportunidades de colaboración en campo.</p>
+
+                <form id="contact-form" class="custom-form" novalidate>
+                    <div class="form-row">
+                        <input type="text" id="nombre" placeholder="Nombre completo" required>
+                        <input type="email" id="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="form-row">
+                        <select id="interes" required>
+                            <option value="">Selecciona área de interés...</option>
+                            <option value="investigacion">Investigación Oceanográfica</option>
+                            <option value="voluntariado">Monitoreo de Campo</option>
+                            <option value="boletin">Suscripción a Datos Técnicos</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-metallic full-width pulse-animation">ENVIAR REGISTRO &rarr;</button>
+                    <div id="form-feedback" class="feedback-box hidden"></div>
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 <b>OCEANIS Institute</b> — Plataforma de Conservación e Inteligencia Oceanográfica.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
